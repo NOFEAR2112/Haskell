@@ -1,11 +1,10 @@
 countElements :: [a] -> Int
 countElements [] = 0
-countElements (_:xs) = 1 + countElements xs
+countElements [x] = 1
+countElements (x:y:xs) = 2 + countElements xs
 
 main :: IO ()
 main = do
-    let list1 = [1, 2, 3]
-    let list2 = []
-    print (countElements list1)
-    print (countElements list2)
+    print (countElements [1, 2, 3])
+    print (countElements [])
 
